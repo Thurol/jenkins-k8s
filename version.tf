@@ -3,7 +3,7 @@ terraform {
     path = "terraform.tfstate"
   }
 
-  required_version = "~> 1.8.4"
+  */required_version = "~> 1.8.4"
 
   required_providers {
     aws = {
@@ -14,5 +14,5 @@ terraform {
       source  = "hashicorp/null"
       version = "3.2.1"
     }
-  }
+ }*/
 }
