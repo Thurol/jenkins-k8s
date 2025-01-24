@@ -4,8 +4,8 @@ pipeline {
     environment {
         AWS_REGION = 'us-east-1'
         TF_VAR_region = "${AWS_REGION}"
-        #TF_VAR_ami = 'ami-04b4f1a9cf54c11d0'
-        #TF_VAR_instance_type = 't3.medium'
+        TF_VAR_ami = 'ami-04b4f1a9cf54c11d0'
+        TF_VAR_instance_type = 't3.medium'
     }
 
     stages {
@@ -27,11 +27,10 @@ pipeline {
                 script {
                     sh '''
                     echo "Génération du plan Terraform..."
-                    #terraform plan -var "region=${TF_VAR_region}" \
+                    terraform plan -var "region=${TF_VAR_region}" \
                                    -var "ami=${TF_VAR_ami}" \
                                    -var "instance_type=${TF_VAR_instance_type}" \
-                                   -out=tfplan
-                                   
+                                   -out=tfplan               
                     '''
                 }
             }
