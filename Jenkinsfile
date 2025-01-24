@@ -15,7 +15,8 @@ pipeline {
                     sh '''
                     echo "Préparation de l'environnement pour Terraform..."
                     rm -rf .terraform || true
-                    terraform init
+                    rm -f .terraform.lock.hcl || true
+                    terraform init -upgrade
                     '''
                 }
             }
